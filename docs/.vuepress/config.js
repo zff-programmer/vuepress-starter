@@ -2,7 +2,7 @@ module.exports = {
   theme: '',
   title: 'VuePress + Element',
   description: 'VuePress搭建Element的组件库文档教程示例代码',
-  base: '/',
+  base: '/vuepress-starter/', // 基路径
   port: '8080',
   head: [
     ['link', { rel: 'icon', href: '/images/hero.png' }]
