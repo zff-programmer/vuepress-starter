@@ -14,7 +14,7 @@ module.exports = {
   },
   base: '/vuepress-starter/', // 基路径
   // base: '/', // 基路径
-  dest: 'docs/.vuepress/dist', // 输出目录
+  dest: '.vuepress/dist', // 输出目录
   host: '0.0.0.0',
   port: '9000',
   head: [['link', { rel: 'icon', href: '/images/hero.png' }]],
