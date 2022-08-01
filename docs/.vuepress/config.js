@@ -12,17 +12,28 @@ module.exports = {
       description: 'VuePress搭建Element的组件库文档教程示例代码',
     },
   },
-  base: '/vuepress-starter/', // 基路径
-  // base: '/', // 基路径
+  // base: '/vuepress-starter/', // 基路径
+  base: '/', // 基路径
   dest: '.vuepress/dist', // 输出目录
   host: '0.0.0.0',
   port: '9000',
-  head: [['link', { rel: 'icon', href: '/images/hero.png' }]],
+  head: [['link', { rel: 'icon', href: '/images/hero.png' }]], // head标签里的logo
   themeConfig: {
-    logo: '/images/hero.png', // 大标题logo
+    // 大标题logo
+    logo: '/images/hero.png',
     sidebar: 'auto',
+    // 最新更新时间
     lastUpdated: 'Last Updated',
-    smoothScroll: true,
+    // smoothScroll: true,
+
+    // 假定 GitHub。也可以是一个完整的 GitLab 网址
+    repo: 'zff-programmer/vuepress-starter',
+    // 如果你的文档不在仓库的根部
+    docsDir: 'docs',
+    // 可选，默认为 master
+    docsBranch: 'main',
+    // 默认为 true，设置为 false 来禁用
+    editLinks: true,
 
     locales: {
       '/en/': {
@@ -38,10 +49,8 @@ module.exports = {
           },
         },
         algolia: {},
-        nav: [{ text: 'Nested', link: '/en/nested/', ariaLabel: 'Nested' }],
-        sidebar: {
-          '/en/nested/': ['/en/nested/'],
-        },
+        nav: require('./config/en/navbar'),
+        sidebar: require('./config/en/sidebar'),
       },
       '/': {
         lang: 'zh-CN',
@@ -60,45 +69,8 @@ module.exports = {
         },
         // 当前 locale 的 algolia docsearch 选项
         algolia: {},
-        nav: [
-          // 配置顶部导航栏
-          {
-            text: '首页',
-            link: '/',
-          },
-          {
-            text: '组件',
-            link: '/comps/',
-          },
-          {
-            text: '指南',
-            link: '/guide/',
-          },
-          {
-            text: '了解更多',
-            items: [
-              {
-                text: '中文',
-                items: [
-                  { text: 'element', link: 'https://element.eleme.cn/', target: '_blank', rel: '' },
-                  { text: 'vue', link: 'https://cn.vuejs.org/', target: '_blank', rel: '' },
-                ],
-              },
-              {
-                text: '其它',
-                items: [
-                  { text: '指南', link: '/guide/' },
-                  { text: '首页', link: '/' },
-                ],
-              },
-            ],
-          },
-        ],
-        sidebar: {
-          // 配置侧边栏部分
-          '/comps/': ['/comps/', '/comps/select.md'],
-          '/guide/': ['/guide/', '/guide/design.md'],
-        },
+        nav: require('./config/zh/navbar'),
+        sidebar: require('./config/zh/sidebar'),
       },
     },
   },
@@ -117,5 +89,10 @@ module.exports = {
       headerAnchorSelector: '.header-anchor',
     },
   ], // 配置插件
-  markdown: {},
+  markdown: {
+    lineNumbers: true,
+    // pageSuffix: '.js', // 无效
+    externalLinks: { target: '_blank', rel: 'noopener noreferrer' },
+    toc: { includeLevel: [2, 3] },
+  },
 }
