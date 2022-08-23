@@ -1,0 +1,159 @@
+/* 定义button变量 */
+:root {
+  --hi-button-height: 40px;
+  --hi-button-line-height: 40px;
+  /* 这是默认的按钮颜色 */
+  --hi-button-color: var(--hi-dark, #4c5161);
+  --hi-white: #fff;
+  --hi-blue: #2a80eb;
+  --hi-orange: #f59b00;
+  --hi-green: #1cad70;
+  --hi-red: #eb4646;
+  --hi-radius: 4px;
+  --hi-animate-time: 0.2s;
+  --hi-dark: #4c5161;
+  --hi-border: #d0d0d5;
+  --hi-opacity: 0.4;
+  --hi-button-loading-img: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cpath d='M512 1024q-104 0-199-40-92-39-163-110T40 711Q0 616 0 512q0-15 10.5-25.5T36 476t25.5 10.5T72 512q0 90 35 171 33 79 94 140t140 95q81 34 171 34t171-35q79-33 140-94t95-140q34-81 34-171t-35-171q-33-79-94-140t-140-95q-81-34-171-34-15 0-25.5-10.5T476 36t10.5-25.5T512 0q104 0 199 40 92 39 163 110t110 163q40 95 40 199t-40 199q-39 92-110 163T711 984q-95 40-199 40z' fill='%232a80eb'/%3E%3C/svg%3E")
+    no-repeat;
+}
+.hi-button {
+  display: inline-block;
+  line-height: var(--hi-button-line-height);
+  height: var(--hi-button-height);
+  text-align: center;
+  color: var(--hi-white);
+  padding: calc((var(--hi-button-height) - var(--hi-button-line-height) - 2px) / 2) calc(var(--hi-button-height) / 2.5);
+  min-width: 80px;
+  border-radius: var(--hi-radius, 4px);
+  border: 1px solid var(--hi-button-color);
+  background: var(--hi-button-color) no-repeat center;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: border-color var(--hi-animate-time, 0.2s), box-shadow var(--hi-animate-time, 0.2s),
+    opacity var(--hi-animate-time, 0.2s);
+  fill: currentColor;
+  font-family: inherit;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.hi-button[width='100%'] {
+  width: 100%;
+}
+
+/* div button  */
+div.hi-button {
+  display: block;
+}
+
+.hi-button:hover {
+  color: var(--hi-white, #fff);
+  text-decoration: none;
+}
+
+.hi-button:not(.disabled):not(:disabled):hover {
+  filter: brightness(1.05);
+}
+
+.hi-button:not(.disabled):not(:disabled):active {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), inset 0 0 0 100px rgba(0, 0, 0, 0.1);
+}
+
+.hi-button.loading {
+  /* 颜色透明是为了挡住按钮的文字 */
+  color: transparent !important;
+  /* pointer-events是为了防止loading放的是svg图片时显示手指的鼠标箭头 */
+  pointer-events: none;
+  position: relative;
+  /* 当pointer-events起作用时，cursor其实无用，但是此处设置应该是为了兼容 */
+  cursor: default;
+}
+
+input.hi-button.loading {
+  --hi-loading-color: var(--hi-white, #fff);
+  --hi-loading-radial: radial-gradient(
+    3px circle,
+    var(--hi-loading-color),
+    var(--hi-loading-color) 2px,
+    transparent 3px
+  );
+  background-image: var(--hi-loading-radial), var(--hi-loading-radial), var(--hi-loading-radial);
+  background-position-x: calc(50% - 10px), 50%, calc(50% + 10px);
+  background-position-y: 50%;
+  background-size: 5px 5px;
+  animation: bubbling 1s infinite;
+}
+
+input[data-type='normal'].loading {
+  --hi-loading-color: var(--hi-blue, #2a80eb);
+}
+
+.hi-button.loading::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  /* 当前背景是继承按钮背景的，所以显示loading时需要设置不同颜色 */
+  background-color: var(--hi-white, #fff);
+  /* mask是遮罩层 */
+  -webkit-mask: var(--hi-button-loading-img);
+  mask: var(--hi-button-loading-img);
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  margin: auto;
+  animation: spin 1s linear infinite;
+}
+
+/* 有底色按钮 */
+[data-type='normal'].loading::before,
+[type='normal'].loading::before {
+  background-color: var(--hi-blue, #2a80eb);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* disabled button */
+.hi-button.disabled,
+.hi-button:disabled {
+  opacity: var(--hi-opacity, 0.4);
+  cursor: default;
+}
+
+/* normal button  */
+.hi-button[type='normal'],
+.hi-button[data-type='normal'] {
+  --hi-button-color: var(--hi-white, #fff);
+  color: var(--hi-dark, #4c5161);
+  border-color: var(--hi-border);
+}
+/* primary button */
+.hi-button[type='primary'] {
+  --hi-button-color: var(--hi-blue, #2a80eb);
+}
+
+/* warning button */
+.hi-button[type^='warn'] {
+  --hi-button-color: var(--hi-orange, #f59b00);
+}
+
+/* error button */
+.hi-button[type='error'] {
+  --hi-button-color: var(--hi-red, #eb4646);
+}
+
+/* success button  */
+.hi-button[type='success'] {
+  --hi-button-color: var(--hi-green, #1cad70);
+}

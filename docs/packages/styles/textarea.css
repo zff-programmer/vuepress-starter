@@ -1,0 +1,79 @@
+:root {
+  --hi-textarea-line-height: var(--hi-line-height, 20px);
+}
+
+textarea.hi-textarea,
+.hi-textarea > textarea {
+  line-height: var(--hi-textarea-line-height);
+  padding: 9px 8px;
+  border: 1px solid var(--hi-border, #d0d0d5);
+  background-color: var(--hi-white, #fff);
+  color: var(--hi-dark, #4c5161);
+  border-radius: var(--hi-radius, 4px);
+  font-size: var(--hi-font-size, 14px);
+  transition: border-color var(--hi-animate-time, 0.2s), background-color var(--hi-animate-time, 0.2s);
+  outline: none;
+  box-sizing: border-box;
+  word-break: break-all;
+  vertical-align: top;
+  overflow: auto;
+  resize: none;
+}
+
+.hi-textarea:hover,
+.hi-textarea > textarea:hover {
+  border-color: var(--hi-dark-border, #ababaf);
+}
+
+.hi-textarea:focus,
+.hi-textarea > textarea:focus {
+  border-color: var(--hi-blue, #2a80eb);
+}
+
+textarea[width='100%'],
+div.hi-textarea > textarea {
+  width: 100%;
+}
+textarea[resize] {
+  resize: both;
+}
+
+textarea[resize='vertical'] {
+  resize: vertical;
+}
+
+textarea[resize='horizontal'] {
+  resize: horizontal;
+}
+
+textarea:disabled,
+textarea:read-only {
+  resize: none;
+}
+/* background 和 border-color 要分开设置，因为需求的情况不同 */
+.hi-textarea:disabled,
+.hi-textarea > textarea:disabled {
+  background-color: var(--hi-light, #f7f9fa);
+}
+
+.hi-textarea:disabled:hover,
+.hi-textarea > textarea:disabled:hover {
+  border-color: var(--hi-border, #d0d0d5);
+}
+
+.hi-textarea:read-only,
+.hi-textarea > textarea:read-only {
+  background-color: var(--hi-white, #fff);
+}
+
+.hi-textarea:read-only:hover,
+.hi-textarea:read-only:focus,
+.hi-textarea > textarea:read-only:hover,
+.hi-textarea > textarea:read-only:focus {
+  border-color: var(--hi-border, #d0d0d5);
+}
+
+.hi-textarea[is-error],
+.hi-textarea > [is-error] {
+  border-color: var(--ui-red, #eb4646) !important;
+}
