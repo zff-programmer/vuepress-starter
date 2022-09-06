@@ -11,7 +11,7 @@
      <input type="text" class="hi-input" placeholder="请输入..." value="" autocomplete="off"/>
 </template>
 <style>
-  @import '../packages/styles/input.css';
+  @import '../../packages/styles/input.css';
 </style>
 ```
 :::
@@ -25,7 +25,7 @@
      <input type="text" class="hi-input" placeholder="请输入..." disabled />
 </template>
 <style>
-  @import '../packages/styles/input.css';
+  @import '../../packages/styles/input.css';
 </style>
 ```
 :::
@@ -40,7 +40,7 @@
       <input class="hi-input" type="password" placeholder="请输入内容"  autocomplete="off"/>
 </template>
 <style>
-  @import '../packages/styles/input.css';
+  @import '../../packages/styles/input.css';
 </style>
 ```
 :::
@@ -54,7 +54,7 @@
       <input class="hi-input" type="number" placeholder="最大是10" max="10"  />
 </template>
 <style>
-  @import '../packages/styles/input.css';
+  @import '../../packages/styles/input.css';
 </style>
 ```
 :::
@@ -68,7 +68,7 @@
       <input class="hi-input" type="search" placeholder="请输入内容" />
 </template>
 <style>
-  @import '../packages/styles/input.css';
+  @import '../../packages/styles/input.css';
 </style>
 ```
 :::
@@ -90,7 +90,7 @@
   </span>
 </template>
 <style>
-  @import '../packages/styles/input.css';
+  @import '../../packages/styles/input.css';
 </style>
 ```
 :::

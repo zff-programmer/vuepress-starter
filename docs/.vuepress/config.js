@@ -53,6 +53,7 @@ module.exports = {
         sidebar: require('./config/en/sidebar'),
       },
       '/': {
+        
         lang: 'zh-CN',
         // 多语言下拉菜单的标题
         selectText: '选择语言',

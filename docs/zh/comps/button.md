@@ -15,7 +15,7 @@
     <button type="success" class="hi-button">成功按钮</button>
 </template>
 <style>
-  @import '../packages/styles/button.css';
+  @import '../../packages/styles/button.css';
 </style>
 ```
 :::
@@ -33,7 +33,7 @@
     <button type="success" class="hi-button" disabled>成功按钮</button>
 </template>
 <style>
-  @import '../packages/styles/button.css';
+  @import '../../packages/styles/button.css';
 </style>
 ```
 :::
@@ -46,7 +46,7 @@
     <button type="primary" class="hi-button loading">普通按钮</button>
 </template>
 <style>
-  @import '../packages/styles/button.css';
+  @import '../../packages/styles/button.css';
 </style>
 ```
 :::

@@ -13,7 +13,7 @@ module.exports = [
       {
         text: 'others',
         items: [
-          { text: 'guide', link: '/guide/' },
+          { text: 'guide', link: '/zh/guide/' },
           { text: 'home', link: '/' },
         ],
       },

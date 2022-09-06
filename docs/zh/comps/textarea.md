@@ -7,7 +7,7 @@
   <textarea class="hi-textarea" placeholder="请输入..."  width='100%' rows="5"></textarea>
 </template>
 <style>
-  @import '../packages/styles/textarea.css'
+  @import '../../packages/styles/textarea.css'
 </style>
 ```
 :::
@@ -20,7 +20,7 @@
   <textarea class="hi-textarea" placeholder="请输入..." disabled></textarea>
 </template>
 <style>
-  @import '../packages/styles/textarea.css'
+  @import '../../packages/styles/textarea.css'
 </style>
 ```
 :::
@@ -33,7 +33,7 @@
   <textarea class="hi-textarea" placeholder="请输入..." readonly></textarea>
 </template>
 <style>
-  @import '../packages/styles/textarea.css'
+  @import '../../packages/styles/textarea.css'
 </style>
 ```
 :::

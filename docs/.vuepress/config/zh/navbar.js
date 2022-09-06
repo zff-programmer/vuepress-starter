@@ -6,11 +6,11 @@ module.exports = [
   },
   {
     text: '组件',
-    link: '/comps/',
+    link: '/zh/comps/',
   },
   {
     text: '指南',
-    link: '/guide/',
+    link: '/zh/guide/',
   },
   {
     text: '了解更多',
@@ -25,7 +25,7 @@ module.exports = [
       {
         text: '其它',
         items: [
-          { text: '指南', link: '/guide/' },
+          { text: '指南', link: '/zh/guide/' },
           { text: '首页', link: '/' },
         ],
       },
