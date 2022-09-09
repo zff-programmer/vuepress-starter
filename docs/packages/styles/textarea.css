@@ -75,5 +75,5 @@ textarea:read-only {
 
 .hi-textarea[is-error],
 .hi-textarea > [is-error] {
-  border-color: var(--ui-red, #eb4646) !important;
+  border-color: var(--hi-red, #eb4646) !important;
 }

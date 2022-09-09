@@ -30,6 +30,14 @@ function getFilenameAndJointRoute(filename) {
 console.log(getGenPromise(g))
 module.exports = {
   // 配置侧边栏部分
-  '/zh/comps/': ['/zh/comps/', '/zh/comps/button.md', '/zh/comps/input.md', '/zh/comps/textarea.md', '/zh/comps/select.md'],
+  '/zh/comps/': [
+    '/zh/comps/',
+    '/zh/comps/button.md',
+    '/zh/comps/input.md',
+    '/zh/comps/textarea.md',
+    '/zh/comps/select.md',
+    '/zh/comps/radio.md',
+    '/zh/comps/checkbox.md',
+  ],
   '/zh/guide/': ['/zh/guide/', '/zh/guide/design.md'],
 }
