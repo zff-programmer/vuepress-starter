@@ -7,7 +7,6 @@
   -webkit-appearance: none;
   width: var(--hi-checkbox-width, 20px);
   height: var(--hi-checkbox-height, 20px);
-  cursor: pointer;
   display: inline-flex;
   outline: none;
   border-radius: var(--hi-radius, 4px);
@@ -23,15 +22,36 @@
   color: var(--ui-border, #d0d0d5);
   transition: color var(--ui-animate-time, 0.2s), background-color var(--ui-animate-time, 0.2s);
 }
-.hi-checkbox:not(:disabled):checked{
-  color:var(--hi-blue,#2a80eb);
-  background-color: var(--hi-dark-blue,#0057c3);
+
+.hi-checkbox:not(:disabled):hover,
+.hi-checkbox:disabled {
+  color: var(--hi-dark-border, #ababaf);
+}
+
+.hi-checkbox:not(:disabled):checked:focus,
+.hi-checkbox:not(:disabled):checked:hover {
+  color: var(--hi-dark-blue, #0057c3);
+  background-color: var(--hi-dark-blue, #0057c3);
+}
+
+.hi-checkbox:indeterminate::after {
+  opacity: 1;
+  visibility: visible;
+  color: var(--ui-blue, #2a80eb);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 8px 8px;
+}
+
+.hi-checkbox:not(:disabled):indeterminate:hover,
+.hi-checkbox:not(:disabled):indeterminate:focus {
+  color: var(--ui-dark-blue, #0057c3);
 }
 
 .hi-checkbox:checked {
   color: var(--hi-blue, #2a80eb);
   background-color: var(--hi-blue, #2a80eb);
 }
+
 .hi-checkbox::after {
   content: '';
   width: 100%;
@@ -43,13 +63,20 @@
   visibility: hidden;
   opacity: 0;
 }
+
 .hi-checkbox:checked::after {
   opacity: 1;
   visibility: visible;
 }
+
 .hi-checkbox:focus {
   border-color: var(--hi-blue, #2a80eb);
 }
+
 .hi-checkbox:focus:hover {
   border-color: var(--hi-dark-blue, #0057c3);
+}
+
+.hi-checkbox:disabled {
+  opacity: var(--hi-opacity, 0.4);
 }

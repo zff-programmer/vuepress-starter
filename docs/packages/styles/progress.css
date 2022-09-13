@@ -1,0 +1,27 @@
+:root {
+  --hi-progress-width: 10em;
+  --hi-progress-height: 0.25em;
+  --hi-progress-background-color: var(--hi-border, #d0d0d5);
+  --hi-blue: #2a80eb;
+}
+.hi-progress {
+  display: inline-block;
+  width: var(--hi-progress-width, 10em);
+  height: var(--hi-progress-height, 0.25em);
+  vertical-align: calc(0.25em - 2px);
+  border: 0;
+  background-color: var(--hi-progress-background-color);
+  border-radius: 1em;
+  overflow: hidden;
+}
+
+.hi-progress::-webkit-progress-bar {
+  background-color: var(--hi-progress-background-color);
+}
+.hi-progress::-webkit-progress-value {
+  background-color: var(--hi-blue);
+}
+
+.hi-progress[width='100%'] {
+  width: 100%;
+}

@@ -8,7 +8,7 @@
   -webkit-appearance: none;
   width: var(--hi-radio-width, 20px);
   height: var(--hi-radio-height, 20px);
-  cursor: pointer;
+  /* cursor: pointer; */
   display: inline-flex;
   outline: none;
   border: 1px solid var(--hi-border, #d0d0d5);
@@ -40,4 +40,10 @@
 .hi-radio:checked::after {
   transform: scale(0.5);
   opacity: 1;
+}
+
+.hi-radio:disabled {
+  border-color: var(--hi-dark-border, #ababaf);
+  opacity: var(--hi-opacity, 0.4);
+  cursor: default;
 }

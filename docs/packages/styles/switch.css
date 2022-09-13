@@ -1,0 +1,69 @@
+:root {
+  --hi-switch-width: 44px;
+  --hi-switch-height: 26px;
+}
+
+input.hi-switch {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: inline-flex;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: inset 0 1px, inset 1px 0, inset -1px 0, inset 0 -1px;
+  background-clip: content-box;
+  width: var(--hi-switch-width, 44px);
+  height: var(--hi-switch-height, 26px);
+  border: 2px solid;
+  border-radius: var(--hi-switch-height, 26px);
+  background-color: currentColor;
+  color: var(--hi-dark-gray, #b6bbc6);
+  font-size: 0;
+  transition: all var(--hi-animate-time, 0.2s);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+input.hi-switch:checked {
+  color: var(--hi-blue, #2a80eb);
+  background-color: var(--hi-blue, #2a80eb);
+}
+input.hi-switch:active {
+  box-shadow: inset 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+input.hi-switch::before {
+  content: '';
+  flex: 0;
+  transition: flex var(--ui-animate-time, 0.2s);
+}
+
+input.hi-switch::after {
+  content: '';
+  width: 22px;
+  height: 22px;
+  border-radius: 100%;
+  background-color: var(--hi-white, #fff);
+  opacity: 1;
+  visibility: visible;
+}
+
+input.hi-switch:checked::before {
+  flex: auto;
+}
+
+input.hi-switch:disabled {
+  opacity: var(--hi-opacity, 0.4);
+  cursor: default;
+}
+
+input.hi-switch:not(:disabled):hover,
+input.hi-switch:not(:disabled):focus {
+  color: var(--hi-gray, #a2a9b6);
+}
+input.hi-switch:not(:disabled):checked:hover,
+input.hi-switch:not(:disabled):checked:focus {
+  color: var(--hi-dark-blue, #0057c3);
+  background-color: var(--hi-dark-blue, #0057c3);
+}

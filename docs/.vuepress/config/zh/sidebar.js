@@ -38,6 +38,8 @@ module.exports = {
     '/zh/comps/select.md',
     '/zh/comps/radio.md',
     '/zh/comps/checkbox.md',
+    '/zh/comps/switch.md',
+    '/zh/comps/progress.md',
   ],
   '/zh/guide/': ['/zh/guide/', '/zh/guide/design.md'],
 }
