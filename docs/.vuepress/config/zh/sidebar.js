@@ -41,6 +41,7 @@ module.exports = {
     '/zh/comps/switch.md',
     '/zh/comps/progress.md',
     '/zh/comps/range.md',
+    '/zh/comps/datalist.md',
   ],
   '/zh/guide/': ['/zh/guide/', '/zh/guide/design.md'],
 }

@@ -12,9 +12,9 @@ module.exports = {
       description: 'VuePress搭建Element的组件库文档教程示例代码',
     },
   },
-  // base: '/vuepress-starter/', // 基路径
-  base: '/', // 基路径
-  dest: '.vuepress/dist', // 输出目录
+  base: '/vuepress-starter/', // 基路径
+  // base: '/', // 基路径
+  dest: './dist', // 输出目录
   host: '0.0.0.0',
   port: '9000',
   head: [['link', { rel: 'icon', href: '/images/hero.png' }]], // head标签里的logo
@@ -53,7 +53,6 @@ module.exports = {
         sidebar: require('./config/en/sidebar'),
       },
       '/': {
-        
         lang: 'zh-CN',
         // 多语言下拉菜单的标题
         selectText: '选择语言',
