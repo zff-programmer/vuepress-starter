@@ -6,7 +6,7 @@ on:
       - hiui
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -14,12 +14,22 @@ jobs:
         with:
           persist-credentials: false
 
+      - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        # 选择要使用的 node 版本
+        node-version: '14'
+
+      - name: Install
+      run: npm install
+
+
       - name: Build
         run: |
-          npm install
           npm run build
+
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: crazy-max/ghaction-github-pages@v2
         with:
           publish_dir: ./dist
           github_token: ${{ secrets.ACTIONS_DEPLOY_KEY }}
